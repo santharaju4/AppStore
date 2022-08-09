@@ -310,10 +310,11 @@ class AppStore extends Component {
 
   getFilteredApp = searchResults => {
     const {activeTabId} = this.state
-    const filterResult = searchResults.filter(
+
+    const result = searchResults.filter(
       eachValue => eachValue.category === activeTabId,
     )
-    return filterResult
+    return result
   }
 
   render() {
@@ -324,6 +325,7 @@ class AppStore extends Component {
     )
 
     const filterResult = this.getFilteredApp(searchResults)
+    console.log(filterResult)
 
     return (
       <div className="app-container">
